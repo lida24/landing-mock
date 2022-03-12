@@ -1,0 +1,9 @@
+$red: #FF3200;
+$gray4: #4E5663;
+$grayE: #E5E5E5;
+
+// RESPONSIVE ================================================================
+
+$mobile-width: 480;
+$mobile: 'only screen and (max-device-width: ' + $mobile-width + 'px)';
+$desktop: 'only screen and (min-width: ' + $mobile-width + 'px)';

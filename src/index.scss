@@ -1,0 +1,39 @@
+@import './variables';
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,500&display=swap&subset=chinese-simplified');
+
+
+body {
+    font-family: 'TTHoves', 'Noto Sans SC';
+}
+
+/* stylelint-disable unit-whitelist */
+html {
+    font-size: 10px;
+}
+
+@media only screen and (min-width: 1600px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media #{$mobile} {
+    html {
+        font-size: 10px;
+    }
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+a {
+    text-decoration: none;
+}
