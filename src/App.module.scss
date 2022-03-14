@@ -1,7 +1,215 @@
+@import './variables.scss';
 
-$primary-color: #61dafb;
+.Blockchain_blockchain {
+    position: relative;
+    //min-height: 60rem;
+    padding-bottom: 112px;
+}
 
-.AppLink {
-    color: $primary-color;
-    font-size: 1rem;
+.PageIntro_intro {
+    padding: 56px 0 40px;
+    h1 {
+        margin: 0;
+        font-weight: 600;
+    }
+}
+
+.PageIntro_title {
+    display: inline-block;
+    padding: 8px;
+    color: grey;
+    font-size: 16px;
+    line-height: 16px;
+    border: 1px solid #bababa;
+    border-radius: 3px;
+}
+
+.Container_intro {
+    display: flex;
+    padding-top: 46px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $grayE;
+}
+
+/* .Child :last-child {
+    flex: 0 0 432px;
+} */
+
+.LandingLayout_landing {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    max-width: 1216px;
+    min-height: calc(100vh - 112px);
+    margin: 0 auto;
+    padding: 48px 126px 0 220px;
+}
+
+.Layout_row {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc(100% + 32px);
+    width: calc(100% + 32px);
+    margin: 0 -16px;
+}
+
+.Head_row {
+    margin-top: 24px;
+    margin-bottom: 60px;
+}
+
+.Paragraph_row {
+    margin-top: 24px;
+}
+
+.Layout_column {
+    flex-basis: calc(79.1667% - 32px);
+    margin-left: calc(16px + 0%);
+    max-width: calc(79.1667% - 32px);
+}
+
+.Head_block {
+    max-width: 434px;
+    color: $black;
+}
+
+.Typography_label_40 {
+    font-size: 40px;
+    line-height: 48px;
+}
+
+.Typography_label_32 {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.Typography_text {
+    color: $gray4;
+    font-weight: 400;
+}
+
+.Typography_text_red {
+    color: $red;
+    font-weight: 400;
+}
+
+.Typography_text_24 {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.Typography_text_18 {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.Typography_text_bold {
+    font-weight: 600;
+}
+
+.Container_main {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $grayE;
+}
+
+.Table_main {
+    padding-top: 60px;
+    width: 100%;
+    border-collapse: collapse;
+    color: $gray4;
+    text-align: left;
+}
+
+td {
+    vertical-align: top;
+    padding-top: 16px;
+}
+
+.Table_header th {
+    padding-bottom: 16px;
+}
+
+.Table_container {
+    border-top: 1px solid $red;
+}
+
+.Column_one {
+    width: 25%;
+}
+
+.Column_two {
+    width: 37.5%;
+    padding-right: 8%;
+    padding-bottom: 24px;
+}
+
+.Column_three {
+    width: 37.5%;
+    padding-right: 9%;
+    padding-bottom: 24px;
+}
+
+.Container_details {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.Map_details {
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+}
+
+.Details_right {
+    padding-top: 46px;
+}
+
+.Detail {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 24px;
+}
+
+.Column_left,
+.Column_right {
+    width: 72%;
+    padding-right: 30%;
+    padding-bottom: 25px;
+}
+
+.Shape {
+    position: relative;
+    width: 57px;
+    height: 57px;
+    margin-right: 24px;
+}
+
+.Shape::before {
+    content: "";
+    position: absolute;
+    top: 55px;
+    left: 25px;
+    z-index: -1;
+    width: 2px;
+    height: 250px;
+    background-color: $red;
+}
+
+.Polygon {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.Detail_logo {
+    width: 72%;
+    padding-right: 38%;
+    padding-top: 14px;
+}
+
+.Column_right_detail {
+    margin-top: 16px;
 }
