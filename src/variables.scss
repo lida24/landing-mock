@@ -8,3 +8,8 @@ $black: #233647;
 $mobile-width: 480;
 $mobile: 'only screen and (max-device-width: ' + $mobile-width + 'px)';
 $desktop: 'only screen and (min-width: ' + $mobile-width + 'px)';
+
+@mixin set-size($w, $h) {
+    width: $w;
+    height: $h;
+}
