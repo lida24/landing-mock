@@ -1,0 +1,205 @@
+@import '~src/ui2/variables';
+
+.button {
+    position: relative;
+
+    white-space: nowrap;
+
+    background: none;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: default;
+    }
+
+    &::before {
+        content: '';
+
+        border: 1px dotted transparent;
+
+        transition: border-color $animation * 0.5 ease;
+    }
+
+    &:active::before, &:disabled::before {
+        border-color: transparent !important;
+    }
+}
+
+/* окантовка фокуса не должна появляться после клика */
+html:not([data-whatinput=keyboard]) .button:focus::before {
+    border-color: transparent;
+}
+
+.auxiliary {
+    padding: 0;
+
+    &::before {
+        @include cover(absolute, 1px);
+    }
+
+    &:focus::before {
+        border-color: $gray4;
+    }
+}
+
+.styled {
+    font-weight: 500;
+    font-family: inherit;
+
+    border-radius: 5px;
+
+    transition: color $animation*0.5 ease,
+        border-color $animation*0.5 ease,
+        background-color $animation*0.5 ease;
+
+    &::before {
+        @include cover(absolute, 2px);
+    }
+}
+
+.loadingIndicator {
+    @include cover(absolute);
+
+    background-color: inherit;
+    border-radius: inherit;
+
+    svg {
+        fill: currentColor;
+    }
+}
+
+.size-56 {
+    height: 56px;
+    padding: 0 19px;
+
+    font-size: 18px;
+    line-height: 56px;
+
+    .loadingIndicator svg {
+        width: 32px;
+    }
+}
+
+.size-48 {
+    height: 48px;
+    padding: 0 19px;
+
+    font-size: 16px;
+    line-height: 48px;
+
+    .loadingIndicator svg {
+        width: 26px;
+    }
+}
+
+.size-40 {
+    height: 40px;
+    padding: 0 13px;
+
+    font-size: 14px;
+    line-height: 40px;
+
+    .loadingIndicator svg {
+        width: 20px;
+    }
+}
+
+.size-32 {
+    height: 32px;
+    padding: 0 12px;
+
+    font-size: 12px;
+    line-height: 32px;
+
+    .loadingIndicator svg {
+        width: 16px;
+    }
+}
+
+.normal {
+    @include animatedShadow(
+        0 6px 8px -8px rgba(0, 0, 0, 0.5),
+        '&',
+        '&:hover:not(:disabled):not(:active)',
+        'after'
+    );
+
+    color: $white;
+
+    background-color: $gray2;
+
+    &:hover:not(:disabled):not(:active) {
+        background-color: $gray4;
+    }
+
+    &:active {
+        background-color: $gray4;
+    }
+
+    &:disabled {
+        background-color: $grayB;
+    }
+
+    &:focus::before {
+        border-color: $white;
+    }
+}
+
+.secondary {
+    color: $gray2;
+
+    background-color: $white;
+    border: 1px solid $gray2;
+
+    &:hover:not(:disabled):not(:active) {
+        color: $white;
+
+        background-color: $gray2;
+    }
+
+    &:active {
+        color: $gray2;
+
+        background-color: rgba($gray2, 0);
+        border-color: $gray2;
+    }
+
+    &:disabled {
+        color: $grayB;
+
+        border-color: $grayB;
+    }
+
+    &:focus::before {
+        border-color: $gray4;
+    }
+}
+
+.background {
+    @include animatedShadow(
+        0 6px 8px -8px rgba(0, 0, 0, 0.5),
+        '&',
+        '&:hover:not(:disabled):not(:active)',
+        'after'
+    );
+
+    color: $gray2;
+
+    background-color: $white;
+
+    &:active {
+        color: $white;
+
+        background-color: $gray2;
+    }
+
+    &:disabled {
+        color: $grayB;
+    }
+
+    &:focus::before {
+        border-color: $gray4;
+    }
+}

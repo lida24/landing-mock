@@ -1,0 +1,166 @@
+/* stylelint-disable unit-whitelist */
+@use 'sass:math';
+
+@mixin dock($position, $where, $size) {
+    $dockOpposite: (
+        left: (right, width),
+        right: (left, width),
+        top: (bottom, height),
+        bottom: (top, height)
+    );
+    position: $position;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    #{nth(map-get($dockOpposite, $where), 1)}: auto;
+    #{nth(map-get($dockOpposite, $where), 2)}: $size;
+}
+
+@mixin cover($position, $offset: 0) {
+    position: $position;
+    top: $offset;
+    right: $offset;
+    bottom: $offset;
+    left: $offset;
+}
+
+@mixin transitionComponent(
+    $cssProperties,
+    $classes: (
+        '&:global(.before-showing)',
+        '&:global(.showing), &:global(.visible)',
+        '&:global(.hiding)'
+    )
+) {
+    #{nth($classes, 1)} {
+        @each $name, $values in $cssProperties {
+            @if (nth($values, 1)) {
+                #{$name}: nth($values, 1);
+            }
+        }
+    }
+
+    #{nth($classes, 2)} {
+        @each $name, $values in $cssProperties {
+            @if (nth($values, 2)) {
+                #{$name}: nth($values, 2);
+            }
+        }
+    }
+
+    #{nth($classes, 3)} {
+        @each $name, $values in $cssProperties {
+            @if length($values) == 3 {
+                @if (nth($values, 3)) {
+                    #{$name}: nth($values, 3);
+                }
+            } @else {
+                @if (nth($values, 1)) {
+                    #{$name}: nth($values, 1);
+                }
+            }
+        }
+    }
+}
+
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return math.div($number, $number * 0 + 1);
+    }
+    @return $number;
+}
+
+@function url-encode($string) {
+    $map: (
+        '%': '%25', '<': '%3C', '>': '%3E', ' ': '%20', '!': '%21', '*': '%2A',
+        "'": '%27', '"': '%22', '(': '%28', ')': '%29', ';': '%3B', ':': '%3A',
+        '@': '%40', '&': '%26', '=': '%3D', '+': '%2B', '$': '%24', ',': '%2C',
+        '/': '%2F', '?': '%3F', '#': '%23', '[': '%5B', ']': '%5D'
+    );
+    $new: $string;
+    @each $search, $replace in $map {
+        $new: str-replace($new, $search, $replace);
+    }
+    @return $new;
+}
+
+@function svg($string) {
+    @return url('data:image/svg+xml,#{url-encode($string)}');
+}
+
+@function slice($list, $start: 1, $end: length($list)) {
+    $result: null;
+
+    @if type-of($start) != number or type-of($end) != number {
+        @warn 'Either $start or $end are not a number for `slice`.';
+    }
+
+    @else if $start > $end {
+        @warn 'The start index has to be lesser than or equals to the end index for `slice`.';
+    }
+
+    @else if $start < 1 or $end < 1 {
+        @warn 'List indexes must be non-zero integers for `slice`.';
+    }
+
+    @else if $start > length($list) {
+        @warn 'List index is #{$start} but list is only #{length($list)} item long for `slice`.';
+    }
+
+    @else if $end > length($list) {
+        @warn 'List index is #{$end} but list is only #{length($list)} item long for `slice`.';
+    }
+
+    @else {
+        $result: ();
+
+        @for $i from $start through $end {
+            $result: append($result, nth($list, $i));
+        }
+    }
+
+    @return $result;
+}
+
+@mixin box-shadow($box-shadow) {
+    box-shadow: $box-shadow;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        box-shadow: nth($box-shadow, 1) nth($box-shadow, 2) (nth($box-shadow, 3) * 2) slice($box-shadow, 4);
+    }
+}
+
+@mixin animatedShadow($shadow, $selector: '&', $activeSelector: '&:hover', $pseudoSelector: 'before') {
+    #{$selector} {
+        position: relative;
+
+        &::#{$pseudoSelector} {
+            @include cover(absolute);
+            @include box-shadow($shadow);
+
+            content: '';
+
+            opacity: 0;
+
+            transition: opacity $animation*0.5 ease;
+
+            pointer-events: none;
+        }
+    }
+
+    #{$activeSelector} {
+        &::#{$pseudoSelector} {
+            opacity: 1;
+        }
+    }
+}
+
+/* stylelint-enable unit-whitelist */

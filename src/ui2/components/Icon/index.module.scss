@@ -1,0 +1,12 @@
+.icon {
+    #{'composes'}: icon from '../Typography/index.module.scss';
+}
+
+@each $size in (56, 48, 40, 32, 24, 16) {
+    .size-#{$size}.size-#{$size} {
+        width: #{$size}px;
+        height: #{$size}px;
+
+        font-size: #{$size}px;
+    }
+}

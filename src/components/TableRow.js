@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import styles from '../App.module.scss';
+
+import styles from '../pages/Blockchain/index.module.scss';
 
 
 export default function TableRow(props) {

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import classNames from 'classnames';
-import styles from '../App.module.scss';
+import React from 'react';
+
+import styles from '../pages/Blockchain/index.module.scss';
 import Polygon from '../icons/Polygon';
+import { Text } from '../ui2';
 
 
 export default function Detail(props) {
@@ -11,9 +12,13 @@ export default function Detail(props) {
             <div className={styles.Details_row_shape}>
                 <Polygon className={styles.Details_row_polygon} />
             </div>
-            <div key={detail.id} className={classNames(styles.Details_row_column, styles.Typography_text, styles.Typography_text_18)}>
+            <Text
+                className={styles.Details_row_column}
+                textSize={18}
+                component='div'
+            >
                 {detail.text}
-            </div>
+            </Text>
         </div>
     );
 }
