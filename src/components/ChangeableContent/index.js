@@ -24,7 +24,7 @@ export default class ChangeableContent extends React.Component {
         const { clickedText2 } = this.state;
         return (
             <div className={styles.Blockchain_content}>
-                <div className={styles.Blockchain_content_buttons}>
+                <div className={styles.Blockchain_content_buttons_container}>
                     {data.tableRows.map((content, i) => (
                         <Text
                             key={i}

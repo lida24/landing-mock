@@ -1,10 +1,10 @@
 @import '~src/ui2/variables';
 
 .intro {
-    padding: 56px 0 24px;
+    padding: 56px 0 40px;
 
     @media #{$mobile} {
-        padding-top: 28px;
+        padding: 28px 0 32px;
     }
 
     h1 {

@@ -6,6 +6,12 @@
         display: flex;
         flex-direction: row;
 
+        &_mobile {
+            @media #{$mobile} {
+                margin-top: 40px;
+            }
+        }
+
         &_shape {
             position: relative;
 
@@ -83,6 +89,10 @@
 
         &_column {
             padding-bottom: 30px;
+
+            @media #{$mobile} {
+                padding-bottom: 16px;
+            }
         }
     }
 }

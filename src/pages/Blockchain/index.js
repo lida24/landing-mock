@@ -22,13 +22,13 @@ export const Blockchain = () => (
                         <Label textSize={useMediaSwitch('40', '32')} weight='bold' component='h1'>
                             Как и зачем Factorin использует блокчейн?
                         </Label>
-                        <Text textSize={useMediaSwitch('24', '18')} component='p'>
+                        <Text className={styles.Intro_container_head} textSize={useMediaSwitch('24', '18')} component='p'>
                             Factorin — это концептуально новый подход к&nbsp;организации
                             финансовых бизнес-процессов и&nbsp;созданию ценности.
                         </Text>
                         <Desktop>
                             {data.rows.map((content, index) => (
-                                <Text key={`intro-${index}`} textSize='18' component='p'>
+                                <Text key={`intro-${index}`} className={styles.Intro_container_margins} textSize='18' component='p'>
                                     {content}
                                 </Text>
                             ))}
@@ -141,7 +141,7 @@ export const Blockchain = () => (
                         <GridColumn className={styles.Details_column_left} size={5}>
                             {data.details.slice(0, 14).map((detail, index) =>
                                 <Detail key={index} detail={detail} />)}
-                            <div className={styles.Details_row}>
+                            <div className={cn(styles.Details_row, styles.Details_row_mobile)}>
                                 <div className={styles.Details_row_shape}>
                                     <Polygon className={styles.Details_row_polygon} />
                                 </div>
