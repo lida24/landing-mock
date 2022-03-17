@@ -1,0 +1,40 @@
+@import '../../variables.scss';
+
+.Typography_text {
+    color: $gray4;
+    font-weight: 400;
+
+    &_18 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+.Table {
+    &_row {
+        border-top: 1px solid $red;
+
+        td {
+            padding-top: 16px;
+
+            vertical-align: top;
+        }
+    }
+
+    &_column_0 {
+        width: 25%;
+        padding-right: 30px
+    }
+
+    &_column_1 {
+        width: 37.5%;
+        padding-right: 8%;
+        padding-bottom: 24px;
+    }
+
+    &_column_2 {
+        width: 37.5%;
+        padding-right: 9%;
+        padding-bottom: 24px;
+    }
+}

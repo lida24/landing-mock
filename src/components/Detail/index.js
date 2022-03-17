@@ -1,8 +1,8 @@
 import React from 'react';
 
-import styles from '../pages/Blockchain/index.module.scss';
-import Polygon from '../icons/Polygon';
-import { Text } from '../ui2';
+import styles from './index.module.scss';
+import Polygon from '../../icons/Polygon';
+import { Text } from '../../ui2';
 
 
 export default function Detail(props) {
@@ -17,7 +17,7 @@ export default function Detail(props) {
                 textSize={18}
                 component='div'
             >
-                {detail.text}
+                {detail}
             </Text>
         </div>
     );
