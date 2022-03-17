@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.scss';
-import App from './App';
+import { Blockchain } from './pages/Blockchain';
 
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <Blockchain />
     </React.StrictMode>,
-  document.getElementById('root'),
+    document.getElementById('root'),
 );
 

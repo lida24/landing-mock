@@ -1,0 +1,63 @@
+@import '~src/ui2/variables';
+
+.tabHeader {
+    position: relative;
+
+    display: flex;
+
+    &::before {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+
+        border-top: 1px dashed $grayB;
+    }
+}
+
+.tab {
+    @include animatedShadow(
+        0 10px 24px 0 rgba($gray2, 0.1),
+        '&',
+        '&.active',
+        'after'
+    );
+
+    height: 56px;
+    padding: 0 22px;
+
+    color: $gray2;
+    font-weight: 500;
+
+    background-color: $white;
+    border: 1px solid $grayE;
+    border-radius: 999px;
+
+    transition: border-color $animation*0.5 ease;
+
+    + .tab {
+        margin-left: auto;
+    }
+
+    &::before, &::after {
+        border-radius: 999px;
+    }
+
+    &::before {
+        @include cover(absolute, 2px);
+    }
+
+    &:not(.passive):not(.active):hover {
+        border-color: $grayB;
+    }
+}
+
+.active {
+    border-color: $azure;
+}
+
+.active, .passive {
+    cursor: default;
+}

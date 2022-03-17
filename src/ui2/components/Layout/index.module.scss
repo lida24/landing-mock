@@ -1,0 +1,23 @@
+@import '~src/ui2/variables';
+
+@media #{$desktop} {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        .row {
+            flex-basis: auto !important;
+        }
+    }
+
+    .row {
+        display: flex;
+        flex: 1 1 calc(100% + 32px);
+        width: calc(100% + 32px);
+        margin: 0 -16px;
+    }
+
+    .column {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 0;
+        margin: 0 16px;
+    }
+}

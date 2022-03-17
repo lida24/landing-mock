@@ -1,0 +1,33 @@
+@import './mixins';
+
+// ANIMATION ==================================================================
+$animation: 300ms;
+
+// COLOR VARIABLES ============================================================
+$gray2: #233647;
+$gray4: #4E5663;
+$gray8: #808080;
+$grayB: #BABABA;
+$grayE: #E5E5E5;
+$grayF: #F7F6F5;
+$grayD: #EDEDED;
+$grayD2: #D5D5D5;
+
+$link: #4A74FA;
+
+$yellow: #FFB903;
+$red: #FF3200;
+$white: #FFF;
+$black: #000;
+
+$azure: #00D6D6;
+
+$landingBlue: #334784;
+$landingGray: #B5C1C6;
+
+
+// RESPONSIVE ================================================================
+
+$mobile-width: 480;
+$mobile: 'only screen and (max-device-width: ' + $mobile-width + 'px)';
+$desktop: 'only screen and (min-width: ' + $mobile-width + 'px)';

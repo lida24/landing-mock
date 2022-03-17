@@ -1,7 +1,7 @@
 const path = require('path');
 
 
-const extensions = ['.js', '.json', '.css', '.scss'];
+const extensions = ['.js', '.ts', '.tsx', '.json', '.css', '.scss'];
 
 const customHooksWithDeps = [
     'useUpdateOnlyEffect',
@@ -10,6 +10,7 @@ const customHooksWithDeps = [
 ];
 
 module.exports = {
+    parser: '@typescript-eslint/parser',
     extends: ['airbnb'],
     settings: {
         'import/extensions': extensions,
@@ -30,6 +31,7 @@ module.exports = {
     },
 
     plugins: [
+        '@typescript-eslint',
         'react-hooks',
     ],
     globals: {
@@ -75,7 +77,27 @@ module.exports = {
         'no-debugger': 'warn',
 
         indent: 'off',
+        '@typescript-eslint/indent': ['error', 4, {
+            SwitchCase: 1,
+        }],
         'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': ['warn', {
+            vars: 'all',
+            args: 'after-used',
+            ignoreRestSiblings: true,
+        }],
+        '@typescript-eslint/member-delimiter-style': ['error', {
+            multiline: {
+                delimiter: 'semi',
+                requireLast: true,
+            },
+            singleline: {
+                delimiter: 'comma',
+                requireLast: false,
+            },
+        }],
+        '@typescript-eslint/no-use-before-define': ['error'],
+
         'no-use-before-define': 'off',
         'no-continue': 'off',
         'no-empty': ['error', {
@@ -124,6 +146,12 @@ module.exports = {
             devDependencies: true,
         }],
         'import/order': ['warn', {
+            pathGroups: [
+                {
+                    pattern: '@factorin/**',
+                    group: 'external',
+                },
+            ],
             groups: [
                 ['builtin', 'external'],
                 'internal',
@@ -135,6 +163,7 @@ module.exports = {
         'import/no-unresolved': ['warn', {
             commonjs: true,
             caseSensitive: true,
+            ignore: ['/packages/container/macro'],
         }],
         'import/extensions': 'off',
         'import/no-default-export': 'off',
@@ -202,4 +231,21 @@ module.exports = {
         'jsx-a11y/label-has-associated-control': 'off',
         'jsx-a11y/control-has-associated-label': 'off',
     },
+    overrides: [
+        {
+            files: ['*.ts', '*.d.ts', '*.tsx'],
+            rules: {
+                'import/named': 'off',
+                'no-redeclare': 'off',
+                'import/export': 'off',
+                'import/no-unresolved': 'off',
+            },
+        },
+        {
+            files: ['*.stories.tsx', '*.stories.js'],
+            rules: {
+                'import/no-default-export': 'off',
+            },
+        },
+    ],
 };

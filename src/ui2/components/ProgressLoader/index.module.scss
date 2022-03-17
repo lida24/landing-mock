@@ -1,0 +1,33 @@
+@import '~src/ui2/variables';
+
+.progressLoader {
+    position: relative;
+
+    width: 24px;
+    height: 24px;
+
+    transform: rotate(-90deg);
+    transform-origin: 50%;
+
+    > circle {
+        stroke: $grayE;
+    }
+
+    > .progress {
+        stroke: $gray2;
+    }
+}
+
+.indeterminate {
+    animation: indeterminate $animation * 4 infinite linear;
+}
+
+@keyframes indeterminate {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(270deg);
+    }
+}

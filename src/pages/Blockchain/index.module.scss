@@ -1,0 +1,249 @@
+@import '../../variables';
+
+.LandingLayout_landing {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    max-width: 1216px;
+    margin: 0 auto;
+    padding: 48px 126px 0 220px;
+}
+
+.Blockchain_blockchain {
+    position: relative;
+
+    padding-bottom: 112px;
+}
+
+.Intro_container {
+    padding-top: 46px;
+    padding-bottom: 40px;
+
+    border-bottom: 1px solid $grayE;
+}
+
+.Head_row {
+    margin-top: 24px;
+    margin-bottom: 60px;
+}
+
+.Typography_text {
+    color: $gray4;
+    font-weight: 400;
+
+    &_red {
+        color: $red !important;
+        font-weight: 400;
+    }
+
+    &_24 {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    &_18 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    &_medium {
+        font-weight: 500 !important;
+    }
+
+    &_bold {
+        font-weight: 600 !important;
+    }
+}
+
+.Container_main {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    border-bottom: 1px solid $grayE;
+}
+
+.Table {
+    width: 100%;
+    padding-top: 60px;
+
+    color: $gray4;
+    text-align: left;
+
+    border-collapse: collapse;
+
+    &_header th {
+        padding-bottom: 16px;
+    }
+
+    &_row {
+        border-top: 1px solid $red;
+
+        td {
+            padding-top: 16px;
+
+            vertical-align: top;
+        }
+    }
+
+    &_column_0 {
+        width: 25%;
+    }
+
+    &_column_1 {
+        width: 37.5%;
+        padding-right: 8%;
+        padding-bottom: 24px;
+    }
+
+    &_column_2 {
+        width: 37.5%;
+        padding-right: 9%;
+        padding-bottom: 24px;
+    }
+}
+
+.Details {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    &_map {
+        display: flex;
+        flex-direction: row;
+        padding-top: 40px;
+    }
+
+    &_column_left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &_column_right {
+        padding-top: 46px;
+
+        > div:last-child {
+            > * {
+                border: none !important;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &_between_shape {
+        position: relative;
+
+        margin-bottom: 30px !important;
+
+        border-top: 2px solid $red;
+        border-left: 2px solid $red;
+        border-radius: 30px 0 0 0;
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: -2px;
+            right: calc(-16px - 16px - 27px);
+
+            display: block;
+            box-sizing: border-box;
+            width: calc(16px + 16px + 27px);
+            height: 47px;
+
+            border-top: 2px solid $red;
+            border-right: 2px solid $red;
+            border-radius: 0 30px;
+        }
+
+        &::before {
+            content: '';
+
+            position: absolute;
+            bottom: -30px;
+            left: calc(-16px - 16px - 27px);
+
+            display: block;
+            box-sizing: border-box;
+            width: calc(16px + 16px + 27px);
+            height: 30px;
+
+            border-right: 2px solid $red;
+            border-bottom: 2px solid $red;
+            border-radius: 30px 0;
+        }
+    }
+
+    &_row {
+        display: flex;
+        flex-direction: row;
+
+        &_shape {
+            position: relative;
+
+            margin-right: 24px;
+
+            &::before {
+                content: '';
+
+                position: absolute;
+                left: 25px;
+                z-index: -1;
+
+                width: 2px;
+                height: 100%;
+
+                background-color: $red;
+            }
+        }
+
+        &:last-child {
+            > div:first-child {
+                &::before {
+                    content: '';
+
+                    position: absolute;
+                    bottom: 0;
+                    left: 25px;
+                    z-index: -1;
+
+                    width: 100%;
+                    height: 100%;
+
+                    background-color: transparent;
+                    border-bottom: 2px solid red;
+                    border-left: 2px solid red;
+                    border-radius: 0 30px;
+                }
+            }
+
+            > div:last-child {
+                border-bottom: 2px solid $red;
+            }
+        }
+
+        &_polygon {
+            display: block;
+            width: 57px;
+            height: 57px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        &_column {
+            padding-bottom: 30px;
+        }
+    }
+
+    &_logo {
+        padding-top: 14px;
+
+        svg {
+            @include set-size(197px, 32px);
+            margin-bottom: 16px;
+        }
+    }
+}

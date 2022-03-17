@@ -1,0 +1,132 @@
+@import '~src/ui2/variables';
+
+.ellipsis {
+    display: block;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.label {
+    margin: 0;
+
+    color: $gray2;
+}
+
+.link {
+    color: inherit;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    &.standalone {
+        position: relative;
+
+        padding-left: 28px;
+
+        .icon {
+            position: absolute;
+            top: 0;
+            right: 100%;
+
+            margin: 0em 4px 0 0;
+        }
+    }
+}
+
+.link:hover .linkContent, .linkContent:hover {
+    border-color: $yellow;
+}
+
+.linkContent {
+    position: relative;
+
+    color: $link;
+
+    border-bottom: 1px solid rgba($yellow, 0);
+
+    transition: border-bottom $animation*0.5 ease, color $animation*0.5 ease;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.regular {
+    font-weight: normal;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.demibold {
+    font-weight: 570;
+}
+
+$labelFontSizes: (
+    '72': (72, 72),
+    '48': (48, 56),
+    '40': (40, 48),
+    '32': (32, 40),
+    '24': (24, 32),
+    '21-24': (21, 24),
+    '21-32': (21, 32),
+    '18': (18, 24),
+    '16': (16, 24),
+    '14': (14, 16),
+    '12': (12, 16),
+    '10': (10, 16),
+    '9': (9, 16)
+);
+
+@each $size, $metrics in $labelFontSizes {
+    .label-#{$size} {
+        font-size: #{nth($metrics, 1)}px;
+        line-height: #{nth($metrics, 2)}px;
+    }
+}
+
+.text {
+    color: $gray4;
+
+    font-weight: normal;
+}
+
+$textFontSizes: (
+    '24': (24, 32),
+    '21': (21, 32),
+    '18': (18, 24),
+    '16': (16, 24),
+    '14': (14, 24),
+);
+
+@each $size, $metrics in $textFontSizes {
+    .text-#{$size} {
+        font-size: #{nth($metrics, 1)}px;
+        line-height: #{nth($metrics, 2)}px;
+    }
+}
+
+.label, .text, .link {
+    .icon {
+        margin-top: -0.15em;
+
+        vertical-align: middle;
+
+        fill: currentColor;
+    }
+}
+
+.label, .text {
+    .link {
+        font-size: inherit;
+        line-height: inherit;
+    }
+}
+
+.note {
+    color: $gray8;
+}

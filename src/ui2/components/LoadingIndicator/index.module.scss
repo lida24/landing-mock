@@ -1,0 +1,30 @@
+@import '~src/ui2/variables';
+
+$duration: $animation * 3;
+
+.loadingIndicator {
+    @for $i from 1 to 8 {
+        > rect:nth-child(#{$i}) {
+            animation-delay: $i * $duration * 0.125;
+        }
+    }
+
+    width: 24px;
+    height: 24px;
+
+    > rect {
+        opacity: 0;
+
+        animation: loading $duration infinite linear;
+    }
+}
+
+@keyframes loading {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+}

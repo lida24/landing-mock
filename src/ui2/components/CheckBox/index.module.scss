@@ -1,0 +1,103 @@
+@import '~src/ui2/variables';
+
+.checkbox {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    > input {
+        position: absolute;
+        z-index: -1;
+
+        opacity: 0;
+    }
+
+    &:not(.disabled):hover .mark::before {
+        opacity: 1;
+    }
+
+    > input:checked + .mark > svg {
+        fill: $gray2;
+    }
+
+    &.disabled {
+        cursor: default;
+        opacity: 0.7;
+    }
+}
+
+@each $params in ((24, 8px), (32, 12px)) {
+    $size: nth($params, 1);
+
+    .size-#{$size} {
+        min-width: #{$size}px;
+        min-height: #{$size}px;
+
+        .mark {
+            width: #{$size - 2}px;
+            padding-top: #{$size - 2}px;
+        }
+
+        .content {
+            margin-left: nth($params, 2);
+        }
+    }
+}
+
+@include animatedShadow(
+    0 6px 8px -6px rgba(0, 0, 0, 0.2),
+    '.mark',
+    '.checkbox:not(.disabled):hover .mark'
+);
+
+.checkbox:not(.disabled):active .mark::before {
+    @include box-shadow(0 4px 8px -4px rgba(0, 0, 0, 0.2));
+}
+
+.mark {
+    display: inline-block;
+    flex: 0 0 auto;
+
+    background-color: $grayF;
+    border: 1px solid $grayE;
+    border-radius: 5px;
+
+    cursor: inherit;
+
+    > svg {
+        width: 100%;
+
+        fill: rgba($gray2, 0);
+
+        transition: fill $animation*0.5 ease;
+    }
+
+    &.radiobutton, &.radiobutton::before {
+        border-radius: 999px;
+    }
+
+    &::after {
+        @include cover(absolute, 1px);
+
+        content: '';
+    }
+}
+
+.checkbox > input:focus ~ .mark::after {
+    border: 1px dotted $gray2;
+}
+
+/* окантовка фокуса не должна появляться после клика */
+html:not([data-whatinput=keyboard]) .mark::after {
+    border: none !important;
+}
+
+.content {
+    display: inline-block;
+
+    margin-top: 1px;
+}

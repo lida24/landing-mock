@@ -1,0 +1,90 @@
+@use 'sass:math';
+
+@import '~src/ui2/variables';
+
+.container {
+    position: relative;
+
+    cursor: help;
+
+    &:hover > .tooltip, > .tooltip:hover {
+        visibility: visible;
+        opacity: 1;
+
+        transition: opacity $animation*0.5 ease math.div($animation, 3);
+    }
+}
+
+.tooltip {
+    @include box-shadow(0 16px 48px 0 rgba(0,0,0,0.2));
+
+    position: absolute;
+    z-index: 50;
+
+    padding: 28px 24px;
+
+    background-color: lighten($yellow, 40);
+    visibility: hidden;
+    cursor: default;
+    opacity: 0;
+
+    transition:
+        opacity $animation*0.5 ease math.div($animation, 3),
+        visibility 0ms $animation;
+
+    &::before {
+        @include cover(absolute, -12px);
+
+        content: '';
+
+        z-index: -1;
+    }
+}
+
+.left {
+    right: 100%;
+
+    margin-right: 12px;
+}
+
+.right {
+    left: 100%;
+
+    margin-left: 12px;
+}
+
+.left, .right {
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+.top {
+    bottom: 100%;
+
+    margin-bottom: 12px;
+}
+
+.bottom {
+    top: 100%;
+
+    margin-top: 12px;
+}
+
+.top, .bottom {
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.sm {
+    width: 176px;
+}
+
+.md {
+    width: 280px;
+}
+
+.lg {
+    width: 384px;
+}
