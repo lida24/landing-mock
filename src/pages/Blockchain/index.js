@@ -27,7 +27,7 @@ export const Blockchain = () => (
                         </Text>
                         {data.rows.map((content, index) => (
                             <Text key={`intro-${index}`} textSize='18' component='p'>
-                                {content.text}
+                                {content}
                             </Text>
                         ))}
                     </GridColumn>
@@ -64,7 +64,7 @@ export const Blockchain = () => (
                             <th />
                             <Text
                                 className={cn(
-                                    styles.Table_column_two,
+                                    styles.Table_column_1,
                                     styles.Typography_text_bold,
                                 )}
                                 textSize='18'
@@ -72,12 +72,12 @@ export const Blockchain = () => (
                             >
                                 Большинство цифровых платформ
                             </Text>
-                            <th className={styles.Table_column_three}>
+                            <th className={styles.Table_column_2}>
                                 <FactorinLogo />
                             </th>
                         </tr>
-                        {data.tableRows.map(tableRow =>
-                            <TableRow key={tableRow.id} tableRow={tableRow} />)}
+                        {data.tableRows.map((tableRow, index) =>
+                            <TableRow key={index} tableRow={tableRow} />)}
                     </tbody>
                 </table>
             </div>
@@ -88,8 +88,8 @@ export const Blockchain = () => (
                 </Label>
                 <GridRow className={styles.Details_map}>
                     <GridColumn className={styles.Details_column_left} size={5}>
-                        {data.details.slice(0, 8).map(detail =>
-                            <Detail key={detail.id} detail={detail} />)}
+                        {data.details.slice(0, 8).map((detail, index) =>
+                            <Detail key={index} detail={detail} />)}
                     </GridColumn>
 
                     <GridColumn
@@ -97,8 +97,8 @@ export const Blockchain = () => (
                         size={1}
                     />
                     <GridColumn size={5} className={styles.Details_column_right}>
-                        {data.details.slice(8, 14).map(detail =>
-                            <Detail key={detail.id} detail={detail} />)}
+                        {data.details.slice(8, 14).map((detail, index) =>
+                            <Detail key={index} detail={detail} />)}
 
                         <div className={styles.Details_row}>
                             <div className={styles.Details_row_shape}>
