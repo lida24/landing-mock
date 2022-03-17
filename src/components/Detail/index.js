@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './index.module.scss';
 import Polygon from '../../icons/Polygon';
-import { Text } from '../../ui2';
+import { Text, useMediaSwitch } from '../../ui2';
 
 
 export default function Detail(props) {
@@ -14,7 +14,7 @@ export default function Detail(props) {
             </div>
             <Text
                 className={styles.Details_row_column}
-                textSize={18}
+                textSize={useMediaSwitch('18', '14')}
                 component='div'
             >
                 {detail}

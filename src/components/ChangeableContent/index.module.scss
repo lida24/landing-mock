@@ -1,0 +1,31 @@
+@import '../../variables.scss';
+
+.Blockchain_content {
+
+    overflow-x: scroll;
+
+    &_buttons {
+        display: inline-flex;
+        border-top: 1px solid #ff3200;
+        padding-top: 8px;
+        margin-bottom: 24px;
+    }
+
+    &_button {
+        border: none;
+        background-color: inherit;
+        cursor: pointer;
+        display: inline-block;
+        padding: 0 16px 0 0;
+        height: fit-content;
+    }
+
+    &_text1 {
+        margin-top: 8px;
+        margin-bottom: 24px;
+    }
+
+    &_text2 {
+        margin-top: 12px;
+    }
+}

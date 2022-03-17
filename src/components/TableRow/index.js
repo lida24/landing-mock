@@ -13,7 +13,7 @@ export default function TableRow(props) {
                 <Text
                     key={index}
                     className={styles[`Table_column_${index}`]}
-                    textSize={18}
+                    textSize='18'
                     component='td'
                 >
                     { content }

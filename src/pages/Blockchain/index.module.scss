@@ -3,6 +3,11 @@
 .LandingLayout_landing {
     position: relative;
 
+    @media #{$mobile} {
+        padding: 7% 8.5%;
+        overflow: hidden;
+    }
+
     display: flex;
     flex-direction: column;
     box-sizing: content-box;
@@ -15,6 +20,8 @@
     position: relative;
 
     padding-bottom: 112px;
+
+
 }
 
 .Intro_container {
@@ -24,9 +31,20 @@
     border-bottom: 1px solid $grayE;
 }
 
+.Intro_content_mobile {
+    @media #{$mobile} {
+        display: flex;
+        flex-flow: column-reverse;
+    }
+
+}
+
 .Head_row {
     margin-top: 24px;
     margin-bottom: 60px;
+    @media #{$mobile} {
+        margin-top: 16px;
+    }
 }
 
 .Typography_text {
@@ -62,6 +80,11 @@
     padding-bottom: 40px;
 
     border-bottom: 1px solid $grayE;
+
+    @media #{$mobile} {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
 }
 
 .Table {
@@ -107,6 +130,11 @@
 .Details {
     padding-top: 40px;
     padding-bottom: 40px;
+
+    @media #{$mobile} {
+        padding-top: 24px;
+        padding-bottom: 32px;
+    }
 
     &_map {
         display: flex;
@@ -186,6 +214,16 @@
 
             margin-right: 24px;
 
+            svg {
+                @media #{$mobile} {
+                    @include set-size(32px, 32px);
+                }
+            }
+
+            @media #{$mobile} {
+                margin-right: 16px;
+            }
+
             &::before {
                 content: '';
 
@@ -197,6 +235,10 @@
                 height: 100%;
 
                 background-color: $red;
+
+                @media #{$mobile} {
+                    display: none;
+                }
             }
         }
 
@@ -217,11 +259,20 @@
                     border-bottom: 2px solid red;
                     border-left: 2px solid red;
                     border-radius: 0 30px;
+
+                    @media #{$mobile} {
+                        border-bottom: none;
+                        border-radius: 0;
+                    }
                 }
             }
 
             > div:last-child {
                 border-bottom: 2px solid $red;
+
+                @media #{$mobile} {
+                    border-bottom: none;
+                }
             }
         }
 
@@ -241,9 +292,17 @@
     &_logo {
         padding-top: 14px;
 
+        @media #{$mobile} {
+            padding-top: 4px;
+        }
+
         svg {
             @include set-size(197px, 32px);
             margin-bottom: 16px;
+
+            @media #{$mobile} {
+                @include set-size(148px, 24px);
+            }
         }
     }
 }
