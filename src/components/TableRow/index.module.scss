@@ -1,15 +1,5 @@
 @import '../../variables.scss';
 
-.Typography_text {
-    color: $gray4;
-    font-weight: 400;
-
-    &_18 {
-        font-size: 18px;
-        line-height: 28px;
-    }
-}
-
 .Table {
     &_row {
         border-top: 1px solid $red;
