@@ -70,6 +70,18 @@ html:not([data-whatinput=keyboard]) .button:focus::before {
     }
 }
 
+.size-64 {
+    height: 64px;
+    padding: 0 19px;
+
+    font-size: 24px;
+    line-height: 64px;
+
+    .loadingIndicator svg {
+        width: 32px;
+    }
+}
+
 .size-56 {
     height: 56px;
     padding: 0 19px;
@@ -103,6 +115,18 @@ html:not([data-whatinput=keyboard]) .button:focus::before {
 
     .loadingIndicator svg {
         width: 20px;
+    }
+}
+
+.size-36 {
+    height: 36px;
+    padding: 0 12px;
+
+    font-size: 16px;
+    line-height: 36px;
+
+    .loadingIndicator svg {
+        width: 16px;
     }
 }
 

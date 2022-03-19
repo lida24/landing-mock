@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.scss';
-import { Blockchain } from './pages/Blockchain';
+import { OnlineApplication } from './pages/OnlineApplication';
 
 
 ReactDOM.render(
     <React.StrictMode>
-        <Blockchain />
+        <OnlineApplication />
     </React.StrictMode>,
     document.getElementById('root'),
 );

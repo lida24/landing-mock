@@ -1,0 +1,111 @@
+@import './../../variables.scss';
+
+.LandingLayout_landing {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    /* max-width: 1216px; */
+    margin: 0 auto;
+}
+
+.OnlineApplication_onlineApplication {
+    position: relative;
+
+    padding-bottom: 160px;
+}
+
+.Intro {
+    padding: 13px 0 80px;
+    background-color: #eeede9;
+    padding: 112px 101px 0 192px;
+    border-bottom: 1px solid $grayE;
+
+    &_container {
+        margin: 54px 0 40px;
+
+        &_underline {
+            border-bottom: 4px solid $red;
+            display: inline-block;
+            line-height: 0.85;
+            text-shadow:
+              2px 2px #eeede9,
+              2px -2px #eeede9,
+              -2px 2px #eeede9,
+              -2px -2px #eeede9;
+        }
+
+        &_head {
+            padding-right: 25%;
+            margin-top: 40px;
+            margin-bottom: 78px;
+        }
+
+        &_paragraph {
+            margin-top: 78px;
+            margin-bottom: 0;
+
+            &_red {
+                margin-top: 0;
+                margin-bottom: 32px;
+                color: $red !important;
+            }
+        }
+    }
+}
+
+
+
+.About {
+    padding: 80px 101px 0 192px;
+
+    &_head_red {
+        margin: 0;
+        color: $red !important;
+    }
+
+    &_head_section {
+        padding-bottom: 48px;
+    }
+
+    &_head_header {
+        font-weight: 600 !important;
+        margin-top: 40px;
+        margin-bottom: 16px;
+        padding-right: 35%;
+
+        &_underline {
+            border-bottom: 2px solid $red;
+            display: inline-block;
+            line-height: 0.85;
+        }
+    }
+
+    &_head_paragraph {
+        padding-right: 35%;
+        margin-bottom: 24px;
+        margin-top: 16px;
+    }
+
+    &_section {
+        width: 65%;
+        border-top: 1px solid $grayE;
+    
+        &_head_rows {
+            font-weight: 600 !important;
+            padding-top: 32px;
+            padding-bottom: 8px;
+            margin: 0;
+        }
+
+        &_rows {
+            margin: 0;
+        }
+    }
+
+    &_last_paragraph{
+        padding-right: 40%;
+        margin: 0;
+    }    
+}
