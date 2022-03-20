@@ -39,11 +39,12 @@ Label.defaultProps = {
 
 type TextProps = Ellipsis & {
     textSize: '24' | '21' | '18' | '16' | '14';
+    weight?: 'light' | 'regular' | 'medium' | 'demibold';
 };
 
 export const Text = <PComponent extends PropsWithChildren<ClassName>>({
     component, componentRef,
-    textSize, ellipsis, // TextProps
+    textSize, ellipsis, weight, // TextProps
     className, ...props // PComponent
 }: ComponentWrapperProps<PComponent, TextProps>) =>
     React.createElement(component, {
@@ -51,6 +52,7 @@ export const Text = <PComponent extends PropsWithChildren<ClassName>>({
         ref: componentRef,
         className: cn(
             styles.text,
+            styles[weight],
             styles[`text-${textSize}`],
             applyEllipsis(ellipsis),
             className,

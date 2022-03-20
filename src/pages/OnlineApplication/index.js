@@ -1,7 +1,7 @@
 import React from 'react';
+import data from 'src/data';
 
 import styles from './index.module.scss';
-import data from 'src/data';
 import OnlineApplicationImg from '../../icons/OnlineApplicationImg';
 import Watch from '../../icons/Watch';
 import { Button, cn, GridColumn, GridRow, Label, Text } from '../../ui2';
@@ -14,7 +14,7 @@ export const OnlineApplication = () => (
                 <div className={styles.Intro}>
                     <GridRow>
                         <GridColumn size={6}>
-                            <Label className={styles.Intro_container} textSize='40' weight='bold' component='h1'>
+                            <Label className={styles.Intro_container} textSize='40' weight='demibold' component='h1'>
                                 Заявка на факторинг <br /> за <span className={styles.Intro_container_underline}>1 минут</span>у в любой банк
                                 <Text className={styles.Intro_container_head} textSize='24' component='p'>
                                     Закройте кассовый разрыв на лучших условиях. Быстрое решение для малого и среднего бизнеса от 40 банков по вашему запросу.
@@ -38,7 +38,7 @@ export const OnlineApplication = () => (
                 <div className={styles.About}>
                     <GridRow>
                         <GridColumn size={6}>
-                            <Label textSize='32' weight='bold' component='h1'>
+                            <Label textSize='32' weight='demibold' component='h1'>
                                 Что такое заявка на факторинг?
                             </Label>
                             <Text
@@ -49,7 +49,7 @@ export const OnlineApplication = () => (
                                 Одна заявка – максимум предложений.
                             </Text>
                             <div className={styles.About_head_section}>
-                                <Text className={styles.About_head_header} textSize='18' weight='bold' component='p'>
+                                <Text className={styles.About_head_header} textSize='18' weight='demibold' component='p'>
                                     Единственная площадка, где зарегистрировано сразу <span className={styles.About_head_header_underline}>40 банков и факторинговых компаний</span>.
                                 </Text>
                                 <Text className={styles.About_head_paragraph} textSize='18' component='p'>
