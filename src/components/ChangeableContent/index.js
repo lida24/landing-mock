@@ -1,20 +1,21 @@
 import React, { useCallback, useState } from 'react';
 
 import { FactorinLogo } from '../../icons';
-import { Text } from '../../ui2';
+import { Text, Label, cn } from '../../ui2';
 import styles from './index.module.scss';
 import data from '../../data';
 
 
 const VersusContent = ({ text: [textContra, textPro] }) => (
     <>
-        <Text
+        <Label
+            className={styles.Blockchain_content_header}
             textSize='14'
-            component='div'
             weight='medium'
+            component='div'
         >
             Большинство цифровых платформ
-        </Text>
+        </Label>
         <Text
             className={styles.Blockchain_content_text1}
             textSize='14'
@@ -41,27 +42,32 @@ export const ChangeableContent = () => {
         data.tableRows[0].columns[2],
     ]);
 
+    const [activeTab, setActiveTab] = useState(0);
+
+
     const onClick = useCallback(index => {
         setText([
             data.tableRows[index].columns[1],
             data.tableRows[index].columns[2],
         ]);
+        setActiveTab(index);
     }, []);
 
     return (
         <div className={styles.Blockchain_content}>
             <div className={styles.Blockchain_content_buttons_container}>
                 {data.tableRows.map((content, i) => (
-                    <Text
+                    <Label
                         key={i}
                         content={content}
-                        className={styles.Blockchain_content_button}
+                        className={cn(activeTab === i ? styles.Tab_active : styles.Tab_unactive, styles.Blockchain_content_button)}
                         textSize='14'
+                        weight='medium'
                         component='button'
                         onClick={() => onClick(i)}
                     >
                         {content.columns[0]}
-                    </Text>
+                    </Label>
                 ))}
             </div>
             <VersusContent text={text} />

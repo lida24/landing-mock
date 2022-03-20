@@ -2,10 +2,17 @@
 
 .Blockchain_content {
 
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
+
+    &_header {
+        opacity: 50%;
+        color: #271e26;
+    }
 
     &_buttons_container {
-        display: inline-flex;
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: inherit;
         border-top: 1px solid #ff3200;
         padding-top: 8px;
         margin-bottom: 24px;
@@ -13,6 +20,8 @@
 
     &_button {
         border: none;
+        color: #271e26;
+        opacity: 50%;
         background-color: inherit;
         cursor: pointer;
         display: inline-block;
@@ -24,9 +33,20 @@
     &_text1 {
         margin-top: 8px;
         margin-bottom: 24px;
+        color: #271e26;
+        opacity: 50%;
     }
 
     &_text2 {
         margin-top: 12px;
+        color: #271e26;
     }
+}
+
+.Tab_active {
+    opacity: 100%;
+}
+
+.Tab_unactive {
+    opacity: 50%;
 }

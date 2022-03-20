@@ -4,7 +4,7 @@
     position: relative;
 
     @media #{$mobile} {
-        padding: 7% 8.5%;
+        padding: 16px 16px;
         overflow: hidden;
     }
 
@@ -286,7 +286,7 @@
         }
 
         &_column {
-            padding-bottom: 30px;
+            padding-bottom: 32px;
 
             @media #{$mobile} {
                 padding-bottom: 16px;
