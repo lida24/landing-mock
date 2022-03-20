@@ -287,10 +287,6 @@
 
         &_column {
             padding-bottom: 32px;
-
-            @media #{$mobile} {
-                padding-bottom: 16px;
-            }
         }
     }
 
