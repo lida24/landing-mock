@@ -3,6 +3,7 @@ import { Polygon } from './Polygon';
 import { IntroImage } from './IntroImage';
 import { OnlineApplicationImg } from './OnlineApplicationImg';
 import { Watch } from './Watch';
+import { Circle } from './Circle';
 
 
 export {
@@ -11,4 +12,5 @@ export {
     IntroImage,
     OnlineApplicationImg,
     Watch,
+    Circle,
 };

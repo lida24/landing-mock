@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './index.module.scss';
 import data from 'src/data';
-import { OnlineApplicationImg, Watch } from '../../icons';
+import { OnlineApplicationImg, Watch, Circle } from '../../icons';
 import { Button, cn, GridColumn, GridRow, Label, Text } from '../../ui2';
 
 
@@ -14,7 +14,7 @@ export const OnlineApplication = () => (
                     <GridRow>
                         <GridColumn size={7}>
                             <Label className={styles.Intro_container} textSize='40' weight='bold' component='h1'>
-                                Заявка на факторинг <br /> за <span className={styles.Intro_container_underline}>1 минут</span>у в любой банк
+                                Заявка на факторинг <br /> за <span className={styles.Intro_container_underline}>1 минут</span>у в любой банк <Circle />
                                 <Text className={styles.Intro_container_head} textSize='24' component='p'>
                                     Закройте кассовый разрыв на лучших условиях. Быстрое решение для малого и среднего бизнеса от 40 банков по вашему запросу.
                                 </Text>
@@ -25,12 +25,26 @@ export const OnlineApplication = () => (
                                     Получите ранний доступ, чтобы первыми обратиться к банкам.
                                 </Label>
                             </Label>
-                            <Button className={styles.Intro_container_button} variant='normal' size='64' type='styled'>
-                                Получить ранний доступ
-                            </Button>
+                            <div className={styles.Intro_container_btn_and_svg}>
+                                <Button className={styles.Intro_container_button} variant='normal' size='64' type='styled'>
+                                    Получить ранний доступ
+                                </Button>
+                                <Circle className={styles.circle_near_button} />
+                            </div>
                         </GridColumn>
                         <GridColumn size={5}>
-                            <OnlineApplicationImg />
+                            <div className={styles.circle_near_img_1}>
+                                <Circle />
+                            </div>
+                            <div className={styles.circle_near_img_2}>
+                                <Circle />
+                            </div>
+                            <div className={styles.circle_near_img_3}>
+                                <Circle />
+                            </div>
+                            <div className={styles.img}>
+                                <OnlineApplicationImg />
+                            </div>
                         </GridColumn>
                     </GridRow>
                 </div>
