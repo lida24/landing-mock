@@ -20,12 +20,9 @@
     position: relative;
 
     padding-bottom: 112px;
-
-
 }
 
 .Intro_container {
-
     border-bottom: 1px solid $grayE;
 
     &_head {
@@ -50,7 +47,6 @@
         display: flex;
         flex-flow: column-reverse;
     }
-
 }
 
 .Head_row {
@@ -63,29 +59,10 @@
 
 .Typography_text {
     color: $gray4;
-    font-weight: 400;
 
     &_red {
         color: $red !important;
         font-weight: 400;
-    }
-
-    &_24 {
-        font-size: 24px;
-        line-height: 36px;
-    }
-
-    &_18 {
-        font-size: 18px;
-        line-height: 28px;
-    }
-
-    &_medium {
-        font-weight: 500 !important;
-    }
-
-    &_bold {
-        font-weight: 600 !important;
     }
 }
 

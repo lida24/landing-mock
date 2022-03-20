@@ -1,16 +1,11 @@
 import React from 'react';
-import cn from 'classnames';
 
 import styles from './index.module.scss';
-import IntroImage from '../../icons/IntroImage';
-import FactorinLogo from '../../icons/FactorinLogo';
-import Polygon from '../../icons/Polygon';
+import { IntroImage, Polygon, FactorinLogo } from '../../icons';
 import data from '../../data';
-import Detail from '../../components/Detail';
-import TableRow from '../../components/TableRow';
-import ChangeableContent from '../../components/ChangeableContent';
+import { Detail, TableRow, ChangeableContent } from '../../components';
 import { PageShortIntro } from '../PageShortIntro';
-import { GridColumn, GridRow, Label, Mobile, Text, useMediaSwitch, Desktop } from '../../ui2';
+import { GridColumn, GridRow, Label, Mobile, Text, useMediaSwitch, Desktop, cn } from '../../ui2';
 
 
 export const Blockchain = () => (
@@ -73,11 +68,9 @@ export const Blockchain = () => (
                             <tr className={styles.Table_header}>
                                 <th />
                                 <Text
-                                    className={cn(
-                                        styles.Table_column_1,
-                                        styles.Typography_text_bold,
-                                    )}
+                                    className={styles.Table_column_1}
                                     textSize='18'
+                                    weight='demibold'
                                     component='th'
                                 >
                                     Большинство цифровых платформ
@@ -120,10 +113,8 @@ export const Blockchain = () => (
                                     <Polygon className={styles.Details_row_polygon} />
                                 </div>
                                 <Text
-                                    className={cn(
-                                        styles.Details_logo,
-                                        styles.Typography_text_medium,
-                                    )}
+                                    className={styles.Details_logo}
+                                    weight='medium'
                                     textSize={18}
                                     component='div'
                                 >
@@ -146,11 +137,9 @@ export const Blockchain = () => (
                                     <Polygon className={styles.Details_row_polygon} />
                                 </div>
                                 <Text
-                                    className={cn(
-                                        styles.Details_logo,
-                                        styles.Typography_text_medium,
-                                    )}
+                                    className={styles.Details_logo}
                                     textSize='18'
+                                    weight='medium'
                                     component='div'
                                 >
                                     <FactorinLogo />
