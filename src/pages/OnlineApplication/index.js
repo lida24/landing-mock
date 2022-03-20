@@ -1,5 +1,4 @@
 import React from 'react';
-import data from 'src/data';
 
 import styles from './index.module.scss';
 import data from 'src/data';
