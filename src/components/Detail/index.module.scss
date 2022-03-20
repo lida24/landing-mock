@@ -1,15 +1,30 @@
 @import '../../variables.scss';
 
 .Details {
-
     &_row {
         display: flex;
         flex-direction: row;
+
+        &_mobile {
+            @media #{$mobile} {
+                margin-top: 24px;
+            }
+        }
 
         &_shape {
             position: relative;
 
             margin-right: 24px;
+
+            svg {
+                @media #{$mobile} {
+                    @include set-size(32px, 32px);
+                }
+            }
+
+            @media #{$mobile} {
+                margin-right: 16px;
+            }
 
             &::before {
                 content: '';
@@ -22,6 +37,10 @@
                 height: 100%;
 
                 background-color: $red;
+
+                @media #{$mobile} {
+                    display: none;
+                }
             }
         }
 
@@ -42,11 +61,20 @@
                     border-bottom: 2px solid red;
                     border-left: 2px solid red;
                     border-radius: 0 30px;
+
+                    @media #{$mobile} {
+                        border-bottom: none;
+                        border-radius: 0;
+                    }
                 }
             }
 
             > div:last-child {
                 border-bottom: 2px solid $red;
+
+                @media #{$mobile} {
+                    border-bottom: none;
+                }
             }
         }
 
@@ -59,7 +87,11 @@
         }
 
         &_column {
-            padding-bottom: 30px;
+            padding-bottom: 32px;
+
+            @media #{$mobile} {
+                padding-bottom: 16px;
+            }
         }
     }
 }
