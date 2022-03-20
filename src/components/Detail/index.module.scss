@@ -7,7 +7,7 @@
 
         &_mobile {
             @media #{$mobile} {
-                margin-top: 40px;
+                margin-top: 24px;
             }
         }
 
@@ -88,6 +88,10 @@
 
         &_column {
             padding-bottom: 32px;
+
+            @media #{$mobile} {
+                padding-bottom: 16px;
+            }
         }
     }
 }
