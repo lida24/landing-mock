@@ -8,7 +8,7 @@ import styles from './index.module.scss';
 
 export interface ButtonProps extends PropsWithChildren<ClassName> {
     /** Размер кнопки (высота в px) */
-    size?: '56' | '48' | '40' | '32';
+    size?: '64' | '56' | '48' | '40' | '32';
     variant?: 'auxiliary' | 'normal' | 'secondary' | 'background';
     loading?: boolean;
 

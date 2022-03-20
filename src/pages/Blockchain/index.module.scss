@@ -3,6 +3,11 @@
 .LandingLayout_landing {
     position: relative;
 
+    @media #{$mobile} {
+        padding: 7% 8.5%;
+        overflow: hidden;
+    }
+
     display: flex;
     flex-direction: column;
     box-sizing: content-box;
@@ -18,42 +23,46 @@
 }
 
 .Intro_container {
-    padding-top: 46px;
-    padding-bottom: 40px;
-
     border-bottom: 1px solid $grayE;
+
+    &_head {
+        margin-top: 24px;
+        margin-bottom: 40px;
+        @media #{$mobile} {
+            margin-top: 16px;
+            margin-bottom: 32px;
+        }
+    }
+
+    &_margins {
+        margin-bottom: 24px;
+        @media #{$mobile} {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.Intro_content_mobile {
+    @media #{$mobile} {
+        display: flex;
+        flex-flow: column-reverse;
+    }
 }
 
 .Head_row {
     margin-top: 24px;
     margin-bottom: 60px;
+    @media #{$mobile} {
+        margin-top: 16px;
+    }
 }
 
 .Typography_text {
     color: $gray4;
-    font-weight: 400;
 
     &_red {
         color: $red !important;
         font-weight: 400;
-    }
-
-    &_24 {
-        font-size: 24px;
-        line-height: 36px;
-    }
-
-    &_18 {
-        font-size: 18px;
-        line-height: 28px;
-    }
-
-    &_medium {
-        font-weight: 500 !important;
-    }
-
-    &_bold {
-        font-weight: 600 !important;
     }
 }
 
@@ -62,6 +71,11 @@
     padding-bottom: 40px;
 
     border-bottom: 1px solid $grayE;
+
+    @media #{$mobile} {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
 }
 
 .Table {
@@ -108,10 +122,19 @@
     padding-top: 40px;
     padding-bottom: 40px;
 
+    @media #{$mobile} {
+        padding-top: 24px;
+        padding-bottom: 32px;
+    }
+
     &_map {
         display: flex;
         flex-direction: row;
         padding-top: 40px;
+
+        @media #{$mobile} {
+            padding-top: 24px;
+        }
     }
 
     &_column_left {
@@ -181,10 +204,26 @@
         display: flex;
         flex-direction: row;
 
+        &_mobile {
+            @media #{$mobile} {
+                margin-top: 40px;
+            }
+        }
+
         &_shape {
             position: relative;
 
             margin-right: 24px;
+
+            svg {
+                @media #{$mobile} {
+                    @include set-size(32px, 32px);
+                }
+            }
+
+            @media #{$mobile} {
+                margin-right: 16px;
+            }
 
             &::before {
                 content: '';
@@ -197,6 +236,10 @@
                 height: 100%;
 
                 background-color: $red;
+
+                @media #{$mobile} {
+                    display: none;
+                }
             }
         }
 
@@ -217,11 +260,20 @@
                     border-bottom: 2px solid red;
                     border-left: 2px solid red;
                     border-radius: 0 30px;
+
+                    @media #{$mobile} {
+                        border-bottom: none;
+                        border-radius: 0;
+                    }
                 }
             }
 
             > div:last-child {
                 border-bottom: 2px solid $red;
+
+                @media #{$mobile} {
+                    border-bottom: none;
+                }
             }
         }
 
@@ -235,15 +287,27 @@
 
         &_column {
             padding-bottom: 30px;
+
+            @media #{$mobile} {
+                padding-bottom: 16px;
+            }
         }
     }
 
     &_logo {
         padding-top: 14px;
 
+        @media #{$mobile} {
+            padding-top: 4px;
+        }
+
         svg {
             @include set-size(197px, 32px);
             margin-bottom: 16px;
+
+            @media #{$mobile} {
+                @include set-size(148px, 24px);
+            }
         }
     }
 }
