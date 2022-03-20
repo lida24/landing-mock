@@ -48,7 +48,7 @@
 
             &_red {
                 margin-top: 0;
-                margin-bottom: 32px;
+                margin-bottom: 32px !important;
                 color: $red !important;
             }
         }
@@ -109,3 +109,15 @@
         margin: 0;
     }    
 }
+
+.rectangle_gradient {
+    background-image: 
+    linear-gradient(to top, rgba(247, 246, 244, 0) 0%, #F7F6F4 100%);
+  
+  }
+  .rectangle_gradient_point1 {
+    stop-color: rgba(247, 246, 244, 0);
+  }
+  .rectangle_gradient_point2 {
+    stop-color: #F7F6F4;
+  }
