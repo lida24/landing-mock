@@ -38,7 +38,7 @@ Label.defaultProps = {
 };
 
 type TextProps = Ellipsis & {
-    textSize: '24' | '21' | '18' | '16' | '14';
+    textSize: '24' | '20' | '21' | '18' | '16' | '14';
     weight?: 'light' | 'regular' | 'medium' | 'demibold';
 };
 
